@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Adquira o eBook de Comunicação Eficaz e melhore suas habilidades de comunicação. Confira estratégias e dicas práticas!">
+    <meta property="og:title" content="Comunicação Eficaz - Transforme sua Comunicação com Nosso eBook">
+    <meta property="og:description" content="Melhore sua comunicação pessoal e profissional com nosso eBook prático. Adquira já e veja a diferença!">
+    <meta property="og:image" content="link-para-imagem-de-destaque.jpg">
+    <meta property="og:url" content="url-da-pagina-de-vendas">
+    <meta name="theme-color" content="#00796b">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+     <!-- Google Fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>eBook Comunicação Eficaz</title>
+
+    <!-- Google Fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS básico e responsivo -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        header {
+            background: #00796b;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        /* Timer no Cabeçalho */
+        #timer {
+            display: none;
+            background-color: #ff5722;
+            color: #fff;
+            padding: 10px 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            animation: fadein 1s;
+        }
+
+        @keyframes fadein {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+        section {
+            padding: 20px 0;
+        }
+
+        /* Sessão de Vídeo */
+        .video-container {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Sessão de Destaque */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: #fff;
+            padding: 40px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero img {
+            width: auto;
+    height: auto;
+    max-width: 100%;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Adiciona sombra */
+    border-radius: 10px; /* Opcional: adiciona cantos arredondados */
+    
+}
+
+        .hero h2 {
+            font-size: 2rem;
+            color: #00796b;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .cta, .whatsapp-btn, .discount-btn {
+            display: inline-block;
+            background: #ff5722;
+            color: #fff;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta:hover, .discount-btn:hover {
+            background-color: #e67a5b; /* Laranja fosco */
+        }
+
+        .cta:active, .discount-btn:active {
+            background-color: #557c55; /* Verde fosco ao clicar */
+        }
+
+        /* Botão WhatsApp */
+        .whatsapp-btn {
+            background: #25d366; /* Verde do WhatsApp */
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .whatsapp-btn:hover {
+            background: #ff5722; /* Laranja ao passar o mouse */
+        }
+
+        /* Adicionando espaço entre os botões */
+        .cta {
+            margin-bottom: 20px; /* Espaçamento entre os botões */
+        }
+
+        /* Quadro do Autor */
+        .author-box {
+            margin-top: 40px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .author-box img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            margin-bottom: 20px;
+        }
+
+        .author-box h3 {
+            font-size: 1.8rem;
+            color: #00796b;
+            margin-bottom: 15px;
+        }
+
+        .author-box p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #00796b;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+
+        .social-icons a:hover {
+            background-color: #004d40; /* Escurecer no hover */
+        }
+
+        .social-icons a i {
+            margin: 0;
+        }
+
+        /* Sessão de Benefícios */
+        .benefits {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+
+        .benefit {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 30%;
+        }
+
+        .benefit h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #00796b;
+        }
+
+        .benefit p {
+            font-size: 1rem;
+            color: #555;
+        }
+/* Carrossel Sessão de Testemunhos */
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.3); /* Fundo mais transparente */
+    color: rgba(255, 255, 255, 0.7); /* Texto mais transparente */
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    z-index: 10;
+    transition: all 0.3s ease; /* Transição suave para o efeito hover */
+}
+
+.carousel-control:hover {
+    background: rgba(0, 0, 0, 0.7); /* Fundo mais escuro no hover */
+    color: rgba(255, 255, 255, 1); /* Texto totalmente opaco no hover */
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 1000px; /* Ajuste conforme necessário */
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel {
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    flex: 0 0 300px;
+    margin-right: 20px;
+    padding: 10px; /* Adicionado para dar espaço ao efeito neon */
+}
+/* Sessão de Testemunhos */
+.testimonials {
+    margin-top: 40px;
+    background: #00796b;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.testimonial-image {
+    width: 100%;
+    height: 450px;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.testimonial-image::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 22px; /* Ligeiramente maior que a imagem */
+    background: #414441;
+    z-index: -1;
+    filter: blur(5px);
+}
+
+.testimonial-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial-image:hover img {
+    transform: scale(1.05);
+}
+
+.cta, .whatsapp-btn, .discount-btn {
+    display: inline-block;
+    background: #ff5722;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Sombreamento adicionado */
+}
+
+.cta {
+    display: inline-block;
+    background: #ff5722; /* Cor original laranja */
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.cta:hover {
+    background-color: #4CAF50; /* Verde */
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cta:active {
+    background-color: #45a049; /* Verde mais escuro ao clicar */
+    transform: translateY(1px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Botão WhatsApp */
+.whatsapp-btn {
+    background: #25d366; /* Verde do WhatsApp */
+    color: #fff;
+    padding: 15px 30px 15px 50px; /* Aumentado o padding esquerdo para acomodar o ícone */
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    position: relative; /* Necessário para posicionar o ícone */
+    display: inline-flex;
+    align-items: center;
+}
+
+.whatsapp-btn i {
+    position: absolute;
+    left: 20px;
+    font-size: 1.5rem;
+}
+
+.whatsapp-btn:hover {
+    background: #ff5722; /* Laranja ao passar o mouse */
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.whatsapp-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.05);
+}   
+
+.social-proof h2 {
+            font-size: 1.8rem;
+            color: #00796b;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .social-proof-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .social-proof-item img {
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            margin-right: 20px;
+        }
+
+        .social-proof-item p {
+            font-size: 1rem;
+            color: #333;
+        }
+
+       /* Sessão de Garantia */
+.guarantee {
+    margin-top: 40px;
+    text-align: center;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.guarantee-seal {
+    width: 750px;
+    height: 350px;
+    object-fit: contain; /* Isso manterá a proporção da imagem */
+    margin-bottom: 20px;
+}
+
+.guarantee p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.guarantee .cta {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .guarantee-seal {
+        width: 100%;
+        height: auto;
+        max-width: 750px;
+        max-height: 350px;
+    }
+}
+
+        /* Rodapé */
+        footer {
+            background: #00796b;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .faq {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.faq h2 {
+    font-size: 1.8rem;
+    color: #00796b;
+    margin-bottom: 20px;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+.faq-item h3 {
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.faq-item h3::after {
+    content: '+';
+    font-size: 1.5rem;
+    color: #00796b;
+}
+
+.faq-item.active h3::after {
+    content: '-';
+}
+
+.faq-answer {
+    display: none;
+    padding: 10px 0;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+.faq-answer p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Estilos para o pop-up */
+.popup {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ffffff;
+    border: 2px solid #00796b;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-width: 300px;
+}
+
+.popup p {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.popup-close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #00796b;
+}
+    </style>
+
+    <!-- JavaScript -->
+    <script>
+         // Função para formatar o tempo
+         function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const remainingSeconds = seconds % 60;
+            return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
+        }
+    
+        // Função para iniciar o temporizador
+        function startTimer(duration, display) {
+            let timer = duration;
+            let intervalId = setInterval(function () {
+                display.textContent = formatTime(timer);
+    
+                if (--timer < 0) {
+                    clearInterval(intervalId);
+                    display.textContent = "Tempo esgotado!";
+                    updatePrice();
+                }
+            }, 1000);
+        }
+    
+        // Função para atualizar o preço
+        function updatePrice() {
+            const priceElement = document.getElementById("product-price");
+            priceElement.textContent = "R$57,90";
+            priceElement.style.color = "#ff5722"; // Mantém a cor laranja
+        }
+        // Exibir o pop-up após 15 segundos
+setTimeout(showPopup, 15000);
+
+// Exibir pop-ups adicionais a cada 30 segundos
+setInterval(showPopup, 30000);
+    
+        // Função para gerar um número aleatório de visitantes
+        function generateRandomVisitors() {
+            return Math.floor(Math.random() * (500 - 100 + 1)) + 100; // Gera um número entre 100 e 500
+        }
+    
+        // Inicializar quando a página carregar
+        window.onload = function () {
+            const timerElement = document.getElementById("timer");
+            const countdownElement = document.getElementById("countdown");
+    
+            // Exibir o timer após 10 segundos
+            setTimeout(function() {
+                timerElement.style.display = "block";
+                // Iniciar o temporizador de 15 minutos (900 segundos)
+                startTimer(900, countdownElement);
+            }, 10000);
+    
+            // Gerar e exibir o número aleatório de visitantes
+            const randomVisitors = generateRandomVisitors();
+            alert(`Número de visitantes na última semana: ${randomVisitors}`);
+        };
+
+        // Função para inicializar o FAQ
+        function initFAQ() {
+            const faqItems = document.querySelectorAll('.faq-item h3');
+            
+            faqItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const parent = item.parentElement;
+                    parent.classList.toggle('active');
+                    
+                    // Fechar outros itens abertos
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.parentElement.classList.remove('active');
+                        }
+                    });
+                });
+            });
+        }
+
+        // Chamar a função de inicialização quando a página carregar
+        window.addEventListener('load', initFAQ);
+
+            // Função para gerar um nome aleatório
+            function generateRandomName() {
+            const names = ["João Pulo Dias", "Maria Paula Silva", "João Pedro","Luan Diniz Silva", "Carlos Eduardo Guimarães" ,"Ana Lúcia", "Carlos", "Lúcia", "Fernando Lemos", "Mariana Araujo", "Ricardo Otavio Souza", "Camila"];
+            return names[Math.floor(Math.random() * names.length)];
+        }
+
+        // Função para exibir o pop-up
+        function showPopup() {
+            const popup = document.createElement('div');
+            popup.className = 'popup';
+            const name = generateRandomName();
+            popup.innerHTML = `
+                <span class="popup-close">&times;</span>
+                <p><strong>${name}</strong> acabou de comprar o eBook Comunicação Eficaz!</p>
+            `;
+            document.body.appendChild(popup);
+
+            // Exibir o pop-up
+            setTimeout(() => {
+                popup.style.display = 'block';
+            }, 100);
+
+            // Configurar o fechamento do pop-up
+            const closeBtn = popup.querySelector('.popup-close');
+            closeBtn.addEventListener('click', () => {
+                popup.style.display = 'none';
+                setTimeout(() => {
+                    popup.remove();
+                }, 300);
+            });
+
+            // Fechar o pop-up automaticamente após 5 segundos
+            setTimeout(() => {
+                popup.style.display = 'none';
+                setTimeout(() => {
+                    popup.remove();
+                }, 300);
+            }, 5000);
+        }
+
+        // Função para gerar um nome aleatório
+function generateRandomName() {
+    const names = ["João Pulo Dias", "Maria Paula Silva", "João Pedro","Luan Diniz Silva", "Carlos Eduardo Guimarães" ,"Ana Lúcia", "Carlos", "Lúcia", "Fernando Lemos", "Mariana Araujo", "Ricardo Otavio Souza", "Camila"];
+    return names[Math.floor(Math.random() * names.length)];
+}
+
+// Função para exibir o pop-up
+function showPopup() {
+    const popup = document.createElement('div');
+    popup.className = 'popup';
+    const name = generateRandomName();
+    popup.innerHTML = `
+        <span class="popup-close">&times;</span>
+        <p><strong>${name}</strong> acabou de comprar o eBook Comunicação Eficaz!</p>
+    `;
+    document.body.appendChild(popup);
+
+    // Exibir o pop-up
+    setTimeout(() => {
+        popup.style.display = 'block';
+    }, 100);
+
+    // Configurar o fechamento do pop-up
+    const closeBtn = popup.querySelector('.popup-close');
+    closeBtn.addEventListener('click', () => {
+        popup.style.display = 'none';
+        setTimeout(() => {
+            popup.remove();
+        }, 300);
+    });
+
+    // Fechar o pop-up automaticamente após 5 segundos
+    setTimeout(() => {
+        popup.style.display = 'none';
+        setTimeout(() => {
+            popup.remove();
+        }, 300);
+    }, 5000);
+}
+document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.querySelector('.carousel-inner');
+    const items = carousel.querySelectorAll('.carousel-item');
+    const prevBtn = document.querySelector('.carousel-control.prev');
+    const nextBtn = document.querySelector('.carousel-control.next');
+    let currentIndex = 0;
+
+    function showItem(index) {
+        const itemWidth = items[0].offsetWidth;
+        const margin = parseInt(window.getComputedStyle(items[0]).marginRight);
+        carousel.style.transform = `translateX(-${index * (itemWidth + margin)}px)`;
+    }
+
+    function showNext() {
+        if (currentIndex < items.length - 1) {
+            currentIndex++;
+            showItem(currentIndex);
+        }
+    }
+
+    function showPrev() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            showItem(currentIndex);
+        }
+    }
+
+    nextBtn.addEventListener('click', showNext);
+    prevBtn.addEventListener('click', showPrev);
+
+    // Inicializar o carrossel
+    showItem(currentIndex);
+});        
+
+    </script>
+</head>
+<body>
+
+    <header>
+        <h1>Melhore Sua Comunicação Agora</h1>
+        <div id="timer">Oferta especial termina em <span id="countdown">15:00</span></div>
+    </header>
+
+    <!-- Vídeo de introdução -->
+    <section class="video-container container">
+        <iframe src="https://www.youtube.com/embed/5qap5aO4i9A" title="Vídeo de Introdução"></iframe>
+    </section>
+
+    <!-- Sessão Hero com o eBook -->
+    <section class="hero container">
+        <img src="Images/Capa.png" alt="Capa do eBook Comunicação Eficaz">
+        <h2>Adquira o melhor E-book sobre comunicação por apenas <span id="product-price" style="color:#ff5722;">R$29,97</span></h2>
+        <p>Descubra como transformar sua comunicação com estratégias e dicas práticas que realmente funcionam.</p>
+        <a href="https://pay.hotmart.com/J93837903I" class="cta">Quero Melhorar Minha Comunicação</a>
+       
+    </section>
+
+    <!-- Sessão do Autor -->
+    <section class="author-box container">
+        <img src="Images/Autor.jpg" alt="Foto do Autor">
+        <h3>Welber Moraes</h3>
+        <p>Especialista em comunicação com mais de 10 anos de experiência, Welber Moraes já ajudou centenas de pessoas a aprimorarem suas habilidades de comunicação.</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/welbermoraespa"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/welbermoraespa/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@WelberMoraes"><i class="fab fa-youtube"></i></a>
+        </div>
+        
+    </section>
+
+    <!-- Sessão de Benefícios -->
+    <section class="benefits container">
+        <div class="benefit">
+            <h3>Desenvolva Habilidades Chave</h3>
+            <p>Descubra técnicas que irão transformar sua comunicação.</p>
+        </div>
+        <div class="benefit">
+            <h3>Conteúdo Prático</h3>
+            <p>Aplicações diretas para seu dia a dia pessoal e profissional.</p>
+        </div>
+        <div class="benefit">
+            <h3>Exercícios práticos</h3>
+            <p>Ao final de cada capítulo você encontra uma lista de exercícios para você praticar durante o seu dia a dia.</p>
+        </div>
+       
+    </section>
+
+<!-- Sessão de Testemunhos -->
+<section class="testimonials container">
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item">
+                    <div class="testimonial-image">
+                        <img src="Images/Ana Souza.png" alt="Cliente Satisfeito">
+                    </div>
+                    <p>Faça como a Ana Souza que aplicou as tecnicas e garantiu o resultado!</p>
+                </div>
+                <div class="carousel-item">
+                    <div class="testimonial-image">
+                        <img src="Images/Carlos Lima.png" alt="Cliente Satisfeito">
+                    </div>
+                    <p>O Carlos Lima, já adquiriu o dele, e você tá esperando o que pra reservar o seu também?</p>
+                </div>
+                <div class="carousel-item">
+                    <div class="testimonial-image">
+                        <img src="Images/Carla Oliveira.png" alt="Cliente Satisfeito">
+                    </div>
+                    <p>Olha só o que a Carla está achando do seu novo e-book.</p>
+                </div>
+                <div class="carousel-item">
+                    <div class="testimonial-image">
+                        <img src="Images/Bruno.png" alt="Cliente Satisfeito">
+                    </div>
+                    <p>O Carlos Lima, já adquiriu o dele, e você tá esperando o que pra reservar o seu também?</p>
+                </div>
+                <!-- Adicione mais itens de carrossel conforme necessário -->
+            </div>
+        </div>
+        <button class="carousel-control prev">&lt;</button>
+        <button class="carousel-control next">&gt;</button>
+    </div>
+
+    <a href="https://wa.me/5591991148750?text=Oi+Desejo+adquirir+o meu+e-book!" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Fale Conosco pelo WhatsApp
+    </a>
+</section>
+   <!-- Sessão de Garantia -->
+<section class="guarantee container">
+    <img src="Images/garantia (2).png" alt="Selo de Garantia" class="guarantee-seal">
+    <p>Garantimos que você ficará satisfeito com o conteúdo. Se não, devolvemos seu dinheiro em até 7 dias.</p>
+    <a href="https://pay.hotmart.com/J93837903I" class="cta">Quero garantir minha vaga</a>
+</section>
+
+    <!-- Sessão de Perguntas Frequentes -->
+<section class="faq container">
+    <h2>Perguntas Frequentes</h2>
+    <div class="faq-item">
+        <h3>O que vou aprender com o eBook Comunicação Eficaz?</h3>
+        <div class="faq-answer">
+            <p>Você aprenderá estratégias práticas e comprovadas para melhorar suas habilidades de comunicação, tanto no ambiente pessoal quanto profissional.</p>
+        </div>
+    </div>
+    <div class="faq-item">
+        <h3>O eBook tem algum tipo de garantia?</h3>
+        <div class="faq-answer">
+            <p>Sim! Se em até 7 dias você não estiver satisfeito, devolvemos 100% do valor pago.</p>
+        </div>
+    </div>
+    <div class="faq-item">
+        <h3>Em quanto tempo recebo o eBook após a compra?</h3>
+        <div class="faq-answer">
+            <p>O envio é imediato! Assim que o pagamento for confirmado, você receberá o eBook diretamente no seu e-mail.</p>
+        </div>
+    </div>
+    <div class="faq-item">
+        <h3>Posso acessar o eBook de qualquer dispositivo?</h3>
+        <div class="faq-answer">
+            <p>Sim, o eBook é disponibilizado em formato PDF, que pode ser acessado de smartphones, tablets, computadores e até leitores de eBooks.</p>
+        </div>
+    </div>
+</section>
+
+    <footer>
+        <p>&copy; 2024 wlmv tecnologias. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
