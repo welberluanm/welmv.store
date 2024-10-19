@@ -228,19 +228,34 @@
 
         /* Sessão de Benefícios */
         .benefits {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 40px;
-        }
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens se movam para a próxima linha em telas menores */
+    justify-content: space-between;
+    margin-top: 40px;
+}
 
-        .benefit {
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 30%;
-        }
+.benefit {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    margin-bottom: 20px; /* Adiciona espaço entre as linhas em telas menores */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .benefit {
+        width: 45%; /* Ajusta a largura dos itens para caber dois por linha */
+    }
+}
+
+@media (max-width: 480px) {
+    .benefit {
+        width: 100%; /* Cada item ocupa toda a largura em telas muito pequenas */
+    }
+}
 
         .benefit h3 {
             font-size: 1.5rem;
